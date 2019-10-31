@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cormorant Garamond", serif;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100vw;
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 20vw 20vw 1fr;
+  grid-template-rows: 60px 25vh 25vh 1fr;
+  grid-template-areas:
+    "nav nav nav"
+    ". title img"
+    "label title img"
+    ". . img";
+}
+
+.nav {
+  grid-area: nav;
+}
+
+#title {
+  grid-area: 2 / 2 / 2 / 2;
+  z-index: 1;
+}
+
+h1 {
+  font-family: quasimoda-2, sans-serif;
+  font-size: 10em;
+  font-weight: 700;
+  font-style: normal;
+  color: #f7d461;
+}
+
+#cover {
+  grid-area: img;
+}
