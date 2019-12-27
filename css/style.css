@@ -11,19 +11,51 @@ a {
 
 header {
   height: 100vh;
-  width: 100vw;
   display: grid;
-  grid-template-columns: 20vw 20vw 60vw;
+  grid-template-columns: 20vw 20vw 1fr;
   grid-template-rows: 60px 25vh 25vh 1fr;
-  grid-template-areas:
-    "nav nav nav"
-    ". title img"
-    "label title img"
-    ". . img";
 }
 
 .nav {
-  grid-area: nav;
+  width: 94vw;
+  position: fixed;
+  padding: 3vh 3vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#logo {
+  height: 3em;
+}
+
+#dropdown_btn {
+  height: 3em;
+  width: 3em;
+}
+
+#dropdown_btn > span {
+  color: white;
+}
+
+#dropdown {
+  position: fixed;
+  height: 94vh;
+  width: 44vw;
+  padding: 3vh 3vw;
+  background-color: #003c7a;
+  left: 50vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  z-index: 2;
+}
+#dropdown > a {
+  color: white;
+  font-size: 3em;
+  margin-top: 0.5em;
 }
 
 #title {
@@ -40,11 +72,15 @@ header {
 }
 
 #cover {
-  grid-area: 1 / 3 / span 4 / 3;
+  grid-area: 1 / 3 / span 4 / span 1;
+  overflow: hidden;
+  text-align: center;
 }
 
 #cover img {
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  align-self: center;
 }
 
 #label {

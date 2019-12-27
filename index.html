@@ -8,32 +8,63 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/imgs/logo_block_header.png" />
     <title>Charles Carter Home</title>
+
     <link
       rel="stylesheet"
       type="text/css"
       href="css/style.css"
       media="screen"
     />
+    <script src="js/script.js" defer></script>
+
+    <!-- Cormorant Garamond -->
     <link
       href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap"
       rel="stylesheet"
     />
+    <!-- Adobe font kit -->
     <link rel="stylesheet" href="https://use.typekit.net/anr7skv.css" />
-
-    <script src="/js/script.js"></script>
   </head>
   <body>
-    <header>
-      <div class="nav"></div>
+    <div class="nav">
+      <a href="index.html"
+        ><img
+          id="logo"
+          src="/imgs/cc_logo_black.png"
+          alt="Charles Carter Logo Home Link"
+      /></a>
+      <button id="dropdown_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="dropdown">
+      <a href="index.html">Home</a>
+      <a href="submit.html">Submit</a>
+      <a href="issue.html">Issues</a>
+      <a href="about.html">About Us</a>
+      <a href="contest.html">Contest</a>
+      <a href="news.html">News</a>
+      <a href="archives.html">Archive</a>
+      <div id="sm_links">
+        <a href="https://www.instagram.com/thecharlescarter/?hl=en"
+          ><img src="" alt="Instagram Link"
+        /></a>
+        <a href="https://twitter.com/thecharliemag">
+          <img src="" alt="Twitter Link" />
+        </a>
+      </div>
+    </div>
 
+    <header>
       <a id="title" href="issue.html">
-        <h1>Fall</h1>
-        <h1>2019</h1>
+        <h1>Spring</h1>
+        <h1>2020</h1>
       </a>
       <p id="label">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis
+        Welcome to our first published issue. Join us in welcoming in a new
+        decade and era as The Charles Carter evolves to be ever more accessible.
       </p>
       <a id="cover" href="issue.html"
         ><img src="imgs/temp_cover.png" alt="issue cover"
