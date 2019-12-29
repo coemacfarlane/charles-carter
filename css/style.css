@@ -4,6 +4,9 @@
   font-family: "Cormorant Garamond", serif;
   color: black;
 }
+a {
+  text-decoration: none;
+}
 
 :root {
   --dark-blue: #003c7a;
@@ -13,17 +16,8 @@
   --red-orange: #ee7011;
 }
 
-a {
-  text-decoration: none;
-}
-
-header {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 20vw 20vw 1fr;
-  grid-template-rows: 60px 25vh 25vh 1fr;
-}
-
+/* NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION  */
+/* NAVIGATION BAR AT TOP OF PAGE */
 .nav {
   width: 94vw;
   position: fixed;
@@ -34,10 +28,12 @@ header {
   z-index: 3;
 }
 
+/* LOGO IMAGE CLICKED TO GO HOME */
 #logo {
   height: 3em;
 }
 
+/* HAMBURGER MENU BUTTON TO SLIDE IN/OUT DROPDOWN MENU */
 #dropdown_btn {
   height: 30px;
   width: 40px;
@@ -51,6 +47,7 @@ header {
   outline: 0;
 }
 
+/* CLASS FOR SPANS FOR HAMBURGER BUTTON VISUAL */
 .hamburger {
   background-color: black;
   width: 40px;
@@ -65,6 +62,7 @@ header {
   width: 40px;
 }
 
+/* TOGGLED ON HAMBURGER SPANS WHEN MENU OPENED */
 .close:nth-child(1) {
   background-color: white;
   width: 30px;
@@ -79,10 +77,10 @@ header {
 .close:nth-child(3) {
   background-color: white;
   width: 30px;
-  transform: translateY(0) rotate(-45deg);
-  -moz-transition: translateY(0) rotate(-45deg);
-  -webkit-transition: translateY(0) rotate(-45deg);
-  -o-transition: translateY(0) rotate(-45deg);
+  transform: rotate(-45deg);
+  -moz-transition: rotate(-45deg);
+  -webkit-transition: rotate(-45deg);
+  -o-transition: rotate(-45deg);
 }
 
 #dropdown_btn:hover > .close:nth-child(1),
@@ -94,6 +92,7 @@ header {
   width: 30px;
 }
 
+/* CLASS FOR DROPDOWN MENU WITH LINKS TO OTHER PAGES */
 #dropdown {
   position: fixed;
   height: 95vh;
@@ -110,6 +109,7 @@ header {
   z-index: 2;
 }
 
+/* MENU LINKS */
 #dropdown > a {
   color: white;
   font-size: 3em;
@@ -121,21 +121,34 @@ header {
   color: var(--orange);
 }
 
-#title {
+/* HOME HERO DISPLAY       HOME HERO DISPLAY       HOME HERO DISPLAY       HOME HERO DISPLAY  */
+/* HERO IMAGE, TITLE, AND LABEL PLACEMENT GRID */
+header {
+  height: 100vh;
+  background-color: var(--blue);
+  display: grid;
+  grid-template-columns: 20vw 25vw 50vw 1fr;
+  grid-template-rows: 12vh 35vh 25vh 1fr 1fr;
+}
+
+/* TITLE UNDER HEADER, CONTAINS CURRENT ISSUE RELEASE SEASON */
+.title {
   grid-area: 2 / 2 / span 2 / span 2;
+  transform-origin: 20% 50%;
   z-index: 1;
 }
 
-#title h1 {
+.title h1 {
   font-family: quasimoda-2, sans-serif;
   font-size: 10em;
   font-weight: 700;
   font-style: normal;
-  color: #f7d461;
+  color: white;
 }
 
+/* WRAPPER FOR ISSUE COVER */
 #cover {
-  grid-area: 1 / 3 / span 4 / span 1;
+  grid-area: 2 / 3 / span 3 / span 1;
   overflow: hidden;
 }
 
@@ -145,12 +158,14 @@ header {
   align-self: center;
 }
 
+/* DESCRIPTION FOR ISSUE */
 #label {
   grid-area: 3 / 1 / span 2 / span 2;
   margin-left: 5vw;
   align-self: center;
   width: 20vw;
   font-size: 1.5em;
+  font-weight: bolder;
   line-height: 2em;
   z-index: 2;
 }
