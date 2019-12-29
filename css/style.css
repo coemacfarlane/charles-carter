@@ -16,6 +16,21 @@ a {
   --red-orange: #ee7011;
 }
 
+.blue {
+  background-color: var(--blue);
+}
+.yellow {
+  background-color: var(--yellow);
+}
+
+.label {
+  margin-left: 5vw;
+  align-self: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  line-height: 1.8em;
+}
+
 /* NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION  */
 /* NAVIGATION BAR AT TOP OF PAGE */
 .nav {
@@ -49,7 +64,7 @@ a {
 
 /* CLASS FOR SPANS FOR HAMBURGER BUTTON VISUAL */
 .hamburger {
-  background-color: black;
+  background-color: white;
   width: 40px;
   height: 4px;
   transition: 0.4s;
@@ -125,16 +140,20 @@ a {
 /* HERO IMAGE, TITLE, AND LABEL PLACEMENT GRID */
 header {
   height: 100vh;
-  background-color: var(--blue);
+  background-color: var(--yellow);
   display: grid;
   grid-template-columns: 20vw 25vw 50vw 1fr;
   grid-template-rows: 12vh 35vh 25vh 1fr 1fr;
 }
 
+header > .bg {
+  grid-area: 1 / 1 / span 4 / span 4;
+}
+
 /* TITLE UNDER HEADER, CONTAINS CURRENT ISSUE RELEASE SEASON */
 .title {
   grid-area: 2 / 2 / span 2 / span 2;
-  transform-origin: 20% 50%;
+  margin-left: 5vw;
   z-index: 1;
 }
 
@@ -148,7 +167,7 @@ header {
 
 /* WRAPPER FOR ISSUE COVER */
 #cover {
-  grid-area: 2 / 3 / span 3 / span 1;
+  grid-area: 2 / 3 / span 4 / span 1;
   overflow: hidden;
 }
 
@@ -159,13 +178,27 @@ header {
 }
 
 /* DESCRIPTION FOR ISSUE */
-#label {
+header > .label {
   grid-area: 3 / 1 / span 2 / span 2;
-  margin-left: 5vw;
-  align-self: center;
-  width: 20vw;
-  font-size: 1.5em;
-  font-weight: bolder;
-  line-height: 2em;
+  width: 25vw;
   z-index: 2;
+}
+
+/* NEWS SECTION     NEWS SECTION     NEWS SECTION     NEWS SECTION     NEWS SECTION  */
+#news {
+  height: 75vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+#news > .label {
+  grid-area: 1 / 1 / span 1 / span 3;
+}
+
+h2 {
+  font-family: quasimoda-2, sans-serif;
+  font-size: 5em;
+  color: var(--dark-blue);
+  grid-area: 2 / 2 / span 1 / span 4;
 }
