@@ -3,17 +3,21 @@
   padding: 0;
   font-family: "Cormorant Garamond", serif;
   color: black;
+  scroll-behavior: smooth;
 }
+
 a {
   text-decoration: none;
+  z-index: 1;
 }
 
 :root {
-  --dark-blue: #003c7a;
+  --dark-blue: #001b36;
   --blue: #4682b3;
   --yellow: #f7d461;
   --orange: #f3a500;
   --red-orange: #ee7011;
+  --font-header: quasimoda-2, sans-serif;
 }
 
 .blue {
@@ -22,13 +26,31 @@ a {
 .yellow {
   background-color: var(--yellow);
 }
+.dark-blue {
+  background-color: var(--dark-blue);
+}
+
+.white-text {
+  color: white;
+}
 
 .label {
-  margin-left: 5vw;
   align-self: center;
   font-size: 1.5em;
   font-weight: bolder;
   line-height: 1.8em;
+  margin-left: 5vw;
+}
+
+.outline_link {
+  text-decoration: underline;
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+    #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+  transition: 0.3s;
+}
+.outline_link:hover {
+  text-shadow: none;
 }
 
 /* NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION    NAVIGATION  */
@@ -46,6 +68,13 @@ a {
 /* LOGO IMAGE CLICKED TO GO HOME */
 #logo {
   height: 3em;
+  transition-duration: 0.4s;
+}
+#logo::focus {
+  outline: 0;
+}
+#logo:hover {
+  height: 3.5em;
 }
 
 /* HAMBURGER MENU BUTTON TO SLIDE IN/OUT DROPDOWN MENU */
@@ -151,18 +180,36 @@ header > .bg {
 }
 
 /* TITLE UNDER HEADER, CONTAINS CURRENT ISSUE RELEASE SEASON */
-.title {
+.issue {
   grid-area: 2 / 2 / span 2 / span 2;
   margin-left: 5vw;
   z-index: 1;
+  transition: 0.4s;
 }
 
-.title h1 {
-  font-family: quasimoda-2, sans-serif;
+.issue h1 {
+  font-family: var(--font-header);
   font-size: 10em;
   font-weight: 700;
   font-style: normal;
   color: white;
+}
+.issue:nth-child(2) {
+  opacity: 0.1;
+}
+.issue:nth-child(3) {
+  opacity: 0.3;
+}
+.issue:nth-child(4) {
+  opacity: 1;
+}
+
+.expandB {
+  transform: translateX(1em) translateY(1em);
+  opacity: 0.3;
+}
+.expandC {
+  transform: translateX(2em) translateY(2em);
 }
 
 /* WRAPPER FOR ISSUE COVER */
@@ -184,21 +231,228 @@ header > .label {
   z-index: 2;
 }
 
-/* NEWS SECTION     NEWS SECTION     NEWS SECTION     NEWS SECTION     NEWS SECTION  */
-#news {
-  height: 75vh;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+/* ARROW */
+#arrowWrapper {
+  grid-area: 4 / 2 / span 2 / span 1;
+  width: 50%;
+  height: 100%;
+  justify-self: right;
+  margin-top: 25%;
 }
 
-#news > .label {
+#arrow {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  animation-name: bounce;
+  -webkit-animation-name: bounce;
+  animation-duration: 4s;
+  -webkit-animation-duration: 4s;
+  animation-iteration-count: infinite;
+  mix-blend-mode: hard-light;
+}
+
+@keyframes bounce {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 70px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 70px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.arrow {
+  display: block;
+  background-color: white;
+  width: 32px;
+  height: 4px;
+}
+.arrow:nth-child(1) {
+  transform: rotate(45deg) translateX(-11px);
+}
+.arrow:nth-child(2) {
+  transform: rotate(-45deg) translateX(17px);
+}
+
+/* LITERARY MAGAZINE DESCRIPTION     DESCRIPTION     DESCRIPTION     DESCRIPTION */
+#description {
+  padding: 10vh 1vw;
+  padding-right: 20vw;
+}
+
+#description > .label {
+  font-size: 3.2em;
+  color: var(--yellow);
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+    #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#description .outline_link {
+  color: var(--yellow);
+}
+#description .outline_link:hover {
+  color: var(--red-orange);
+}
+
+/* ANTHOLOGY SECTION     ANTHOLOGY SECTION     ANTHOLOGY SECTION     ANTHOLOGY SECTION */
+#anthology {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 20vh) repeat(5, 90vh) 30vh;
+}
+
+#anthology > .label {
   grid-area: 1 / 1 / span 1 / span 3;
 }
 
-h2 {
-  font-family: quasimoda-2, sans-serif;
+#anth_header {
+  justify-self: center;
+  align-self: center;
+  grid-area: 1 / 1 / span 2 / span 4;
+}
+
+#anthology h2 {
+  font-family: var(--font-header);
+  font-size: 8em;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.card {
+  margin: 5vh 2vw;
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-direction: row;
+}
+
+.card:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.thn_wrap {
+  height: 100%;
+  width: 60%;
+  overflow: hidden;
+  display: flex;
+}
+.thn_wrap > img {
+  height: initial;
+  width: 100%;
+  align-self: center;
+  top: 0;
+}
+
+.card > .label {
+  width: 40%;
+  height: 90%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+/* title of the piece in the card */
+.title {
+  color: var(--yellow);
+  font-size: 2em;
+  margin-bottom: 2em;
+}
+
+/* information about the piece and artwork paired */
+.piece_info {
+  height: 100%;
+}
+.piece_info p {
+  color: inherit;
+}
+
+/* link in card to read the piece */
+.read_link {
+  align-self: flex-end;
+  vertical-align: 100%;
+  height: 2em;
+  width: 120px;
+  padding-right: 40px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.read_button {
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+
+  transition-duration: 0.5s;
+}
+
+.read_link img {
+  height: 1em;
+  align-self: center;
+  transform: translateY(2px) translateX(14px);
+}
+
+.read_link p {
+  display: none;
+  font-size: 1.1em;
+  color: white;
+  transition-duration: 0.6s;
+}
+
+.read_button:hover {
+  width: 100%;
+  border-radius: 30px;
+  padding: 0 25px;
+  justify-content: space-around;
+}
+.read_button:hover > p {
+  display: block;
+}
+
+#anth_link {
+  grid-area: 8 / 1 / span 1 / span 5;
+  align-self: center;
+  margin-left: 5vw;
   font-size: 5em;
-  color: var(--dark-blue);
-  grid-area: 2 / 2 / span 1 / span 4;
+  text-decoration: underline;
+}
+
+#anthology .outline_link {
+  color: white;
+  opacity: 0.6;
+}
+#anthology .outline_link:hover {
+  opacity: 1;
+}
+
+/* FOOTER       FOOTER        FOOTER        FOOTER */
+footer {
+  padding: 1em 5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
