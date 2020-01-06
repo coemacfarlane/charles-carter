@@ -6,11 +6,6 @@
   scroll-behavior: smooth;
 }
 
-a {
-  text-decoration: none;
-  z-index: 1;
-}
-
 :root {
   --dark-blue: #001b36;
   --blue: #4682b3;
@@ -18,6 +13,15 @@ a {
   --orange: #f3a500;
   --red-orange: #ee7011;
   --font-header: quasimoda-2, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  z-index: 1;
+}
+
+html {
+  background: var(--orange);
 }
 
 .blue {
@@ -40,6 +44,12 @@ a {
   font-weight: bolder;
   line-height: 1.8em;
   margin-left: 5vw;
+}
+
+.outline_text {
+  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+    #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .outline_link {
@@ -165,81 +175,58 @@ a {
   color: var(--orange);
 }
 
-/* HOME HERO DISPLAY       HOME HERO DISPLAY       HOME HERO DISPLAY       HOME HERO DISPLAY  */
-/* HERO IMAGE, TITLE, AND LABEL PLACEMENT GRID */
-header {
-  height: 100vh;
-  background-color: var(--yellow);
-  display: grid;
-  grid-template-columns: 20vw 25vw 50vw 1fr;
-  grid-template-rows: 12vh 35vh 25vh 1fr 1fr;
+/* AN ANIMATED OUTLINED BUTTON */
+.link_button {
+  align-self: flex-end;
+  vertical-align: 100%;
+  height: 2em;
+  width: 120px;
+  padding-right: 40px;
+
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
 }
 
-header > .bg {
-  grid-area: 1 / 1 / span 4 / span 4;
+.link_btn_cont {
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  flex-direction: row;
+
+  transition-duration: 0.5s;
 }
 
-/* TITLE UNDER HEADER, CONTAINS CURRENT ISSUE RELEASE SEASON */
-.issue {
-  grid-area: 2 / 2 / span 2 / span 2;
-  margin-left: 5vw;
-  z-index: 1;
-  transition: 0.4s;
-}
-
-.issue h1 {
-  font-family: var(--font-header);
-  font-size: 10em;
-  font-weight: 700;
-  font-style: normal;
-  color: white;
-}
-.issue:nth-child(2) {
-  opacity: 0.1;
-}
-.issue:nth-child(3) {
-  opacity: 0.3;
-}
-.issue:nth-child(4) {
-  opacity: 1;
-}
-
-.expandB {
-  transform: translateX(1em) translateY(1em);
-  opacity: 0.3;
-}
-.expandC {
-  transform: translateX(2em) translateY(2em);
-}
-
-/* WRAPPER FOR ISSUE COVER */
-#cover {
-  grid-area: 2 / 3 / span 4 / span 1;
-  overflow: hidden;
-}
-
-#cover img {
-  width: 100%;
-  min-height: 100%;
+.link_button img {
+  height: 1em;
   align-self: center;
+  transform: translateY(2px) translateX(14px);
 }
 
-/* DESCRIPTION FOR ISSUE */
-header > .label {
-  grid-area: 3 / 1 / span 2 / span 2;
-  width: 25vw;
-  z-index: 2;
+.link_button p {
+  display: none;
+  font-size: 1.1em;
+  color: white;
+  transition-duration: 0.6s;
 }
 
-/* ARROW */
-#arrowWrapper {
-  grid-area: 4 / 2 / span 2 / span 1;
-  width: 50%;
-  height: 100%;
-  justify-self: right;
-  margin-top: 25%;
+.link_btn_cont:hover {
+  width: 100%;
+  border-radius: 30px;
+  padding: 0 25px;
+  justify-content: space-around;
+}
+.link_btn_cont:hover > p {
+  display: block;
 }
 
+/* BOUNCING ARROW */
 #arrow {
   position: relative;
   width: 30px;
@@ -287,172 +274,4 @@ header > .label {
 }
 .arrow:nth-child(2) {
   transform: rotate(-45deg) translateX(17px);
-}
-
-/* LITERARY MAGAZINE DESCRIPTION     DESCRIPTION     DESCRIPTION     DESCRIPTION */
-#description {
-  padding: 10vh 1vw;
-  padding-right: 20vw;
-}
-
-#description > .label {
-  font-size: 3.2em;
-  color: var(--yellow);
-  text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
-    #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
-  -webkit-font-smoothing: antialiased;
-}
-
-#description .outline_link {
-  color: var(--yellow);
-}
-#description .outline_link:hover {
-  color: var(--red-orange);
-}
-
-/* ANTHOLOGY SECTION     ANTHOLOGY SECTION     ANTHOLOGY SECTION     ANTHOLOGY SECTION */
-#anthology {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 20vh) repeat(5, 90vh) 30vh;
-}
-
-#anthology > .label {
-  grid-area: 1 / 1 / span 1 / span 3;
-}
-
-#anth_header {
-  justify-self: center;
-  align-self: center;
-  grid-area: 1 / 1 / span 2 / span 4;
-}
-
-#anthology h2 {
-  font-family: var(--font-header);
-  font-size: 8em;
-  color: white;
-  transition-duration: 0.4s;
-}
-
-.card {
-  margin: 5vh 2vw;
-  grid-column: 1 / span 5;
-  display: flex;
-  flex-direction: row;
-}
-
-.card:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-
-.thn_wrap {
-  height: 100%;
-  width: 60%;
-  overflow: hidden;
-  display: flex;
-}
-.thn_wrap > img {
-  height: initial;
-  width: 100%;
-  align-self: center;
-  top: 0;
-}
-
-.card > .label {
-  width: 40%;
-  height: 90%;
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
-}
-
-/* title of the piece in the card */
-.title {
-  color: var(--yellow);
-  font-size: 2em;
-  margin-bottom: 2em;
-}
-
-/* information about the piece and artwork paired */
-.piece_info {
-  height: 100%;
-}
-.piece_info p {
-  color: inherit;
-}
-
-/* link in card to read the piece */
-.read_link {
-  align-self: flex-end;
-  vertical-align: 100%;
-  height: 2em;
-  width: 120px;
-  padding-right: 40px;
-
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: flex-end;
-}
-
-.read_button {
-  border-style: solid;
-  border-width: 2px;
-  border-color: white;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-
-  display: flex;
-  flex-direction: row;
-
-  transition-duration: 0.5s;
-}
-
-.read_link img {
-  height: 1em;
-  align-self: center;
-  transform: translateY(2px) translateX(14px);
-}
-
-.read_link p {
-  display: none;
-  font-size: 1.1em;
-  color: white;
-  transition-duration: 0.6s;
-}
-
-.read_button:hover {
-  width: 100%;
-  border-radius: 30px;
-  padding: 0 25px;
-  justify-content: space-around;
-}
-.read_button:hover > p {
-  display: block;
-}
-
-#anth_link {
-  grid-area: 8 / 1 / span 1 / span 5;
-  align-self: center;
-  margin-left: 5vw;
-  font-size: 5em;
-  text-decoration: underline;
-}
-
-#anthology .outline_link {
-  color: white;
-  opacity: 0.6;
-}
-#anthology .outline_link:hover {
-  opacity: 1;
-}
-
-/* FOOTER       FOOTER        FOOTER        FOOTER */
-footer {
-  padding: 1em 5vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
