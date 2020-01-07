@@ -1,0 +1,111 @@
+html {
+  background-color: white;
+}
+
+h1 {
+  font-family: var(--font-header);
+}
+
+#content {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 70vh 1fr 20vh;
+  grid-template-columns: 100 vw;
+}
+
+/* Accordion for five most recent years of content */
+#accordion {
+  grid-area: 1 / 1 / span 1 / span 1;
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.pane {
+  width: 20%;
+  height: 80%;
+  transition-duration: 0.6s;
+}
+#one.pane {
+  background-color: var(--red-orange);
+}
+#two.pane {
+  background-color: var(--orange);
+}
+#three.pane {
+  background-color: var(--yellow);
+}
+#four.pane {
+  background-color: var(--blue);
+}
+#five.pane {
+  background-color: var(--dark-blue);
+  filter: brightness(2.2);
+}
+
+.pane h1 {
+  width: fit-content;
+  font-size: 6em;
+  transform: rotate(90deg) translateY(4vw);
+  margin-top: 2.3em;
+}
+
+.expand {
+  width: 90vw;
+}
+.shrink {
+  width: 2.5vw;
+}
+
+.seasons {
+  height: 80%;
+  margin-left: 20vw;
+  transform: translateY(-15em);
+}
+
+.seasons h2 {
+  font-size: 10em;
+  line-height: 1.8em;
+}
+h2:hover {
+  text-decoration: underline;
+}
+
+/* Archives Header and button to older content */
+/* at bottom of page */
+aside {
+  grid-area: 3 / 1 / span 1 / span 1;
+  width: 92vw;
+  padding: 0 4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h3 {
+  font-size: 5em;
+  align-self: center;
+}
+
+.link_button {
+  width: 300px;
+  align-self: center;
+}
+.link_btn_cont {
+  border-color: black;
+}
+.link_button img {
+  transform: translateY(1px) translateX(15px);
+}
+.link_button p {
+  word-wrap: none;
+  overflow: hidden;
+  color: black;
+  font-size: 1.5em;
+  font-weight: bolder;
+  line-height: 1.8em;
+  transition-delay: 2s;
+  transition-duration: 2s;
+}
