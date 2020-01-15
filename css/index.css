@@ -82,13 +82,15 @@ header > .label {
 
 #description > .label {
   font-size: 3.2em;
-  color: var(--yellow);
+  color: black;
 }
 
-#description .outline_link {
-  color: var(--yellow);
+#description a {
+  color: black;
+  text-decoration: underline;
+  transition-duration: 0.3s;
 }
-#description .outline_link:hover {
+#description a:hover {
   color: var(--red-orange);
 }
 
