@@ -12,7 +12,7 @@ h1 {
   padding: 0;
   display: grid;
   grid-template-rows: 10vh 15vh 1fr;
-  grid-template-columns: 10vw 1fr 30vw 10vw;
+  grid-template-columns: 10vw 1fr 40vw;
 }
 
 #back_arrow {
@@ -43,11 +43,11 @@ h1 {
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #year_list a {
-  font-size: 2em;
+  font-size: 1.6em;
   font-family: var(--font-header);
   transform: rotate(90deg);
 }
@@ -76,14 +76,4 @@ h1 {
 
 .active {
   color: var(--blue);
-}
-
-#dropdown_btn {
-  grid-area: 1 / 4 / span 1 / span 1;
-  justify-self: end;
-  margin-top: 25px;
-  margin-right: 25px;
-}
-.hamburger {
-  background-color: black;
 }
