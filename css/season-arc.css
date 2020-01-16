@@ -59,6 +59,7 @@ h1 {
   grid-area: 3 / 1 / span 1 / span 1;
   width: 90px;
   height: 100%;
+  overflow: scroll;
 }
 
 #month_list div {
