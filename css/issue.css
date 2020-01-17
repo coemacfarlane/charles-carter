@@ -43,3 +43,22 @@ header {
   font-size: 1.3em;
   color: white;
 }
+
+article {
+  background-color: var(--blue);
+}
+
+#arrow_wrapper {
+  grid-area: 3 / 5 / span 1 / span 1;
+  transform-origin: top;
+  transform: rotate(-90deg);
+}
+#arrow_wrapper p {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  transform: rotate(90deg);
+}
+#arrow {
+  transform: translateY(-60px);
+}
